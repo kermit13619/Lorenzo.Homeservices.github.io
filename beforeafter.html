@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Before & After</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+background:#6b6b6b;
+margin:0;
+padding:15px;
+text-align:center;
+}
+
+/* Header */
+
+.header{
+background:#555;
+color:#7aa51d;
+padding:30px;
+border-radius:20px;
+max-width:1000px;
+margin:auto;
+margin-bottom:20px;
+}
+
+.header h1{
+margin:0;
+font-size:40px;
+}
+
+/* Image section */
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+max-width:1000px;
+margin:auto;
+}
+
+.box{
+background:#e8e8e8;
+border-radius:20px;
+padding:10px;
+width:420px;
+}
+
+.box h2{
+color:#7aa51d;
+margin-top:5px;
+}
+
+.box img{
+width:100%;
+border-radius:15px;
+}
+
+/* Buttons */
+
+.buttons{
+margin-top:30px;
+}
+
+button{
+background:#4f4f4f;
+color:#0c2000;
+border:none;
+padding:15px 30px;
+font-size:22px;
+border-radius:15px;
+margin:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#3d3d3d;
+}
+
+/* Mobile fix */
+
+@media (max-width:700px){
+
+.gallery{
+flex-direction:column;
+align-items:center;
+}
+
+.box{
+width:95%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>Before and After</h1>
+</div>
+
+<div class="gallery">
+
+<div class="box">
+<h2>Before</h2>
+<img id="beforeImg" src="before1.jpg">
+</div>
+
+<div class="box">
+<h2>After</h2>
+<img id="afterImg" src="after1.jpg">
+</div>
+
+</div>
+
+<div class="buttons">
+<button onclick="prev()">Back</button>
+<button onclick="next()">Next</button>
+</div>
+
+<script>
+
+let jobs = [
+{before:"frown.jpg", after:"smile.jpg"},
+{before:"before2.jpg", after:"after2.jpg"},
+{before:"before3.jpg", after:"after3.jpg"}
+];
+
+let current = 0;
+
+function show(){
+document.getElementById("beforeImg").src = jobs[current].before;
+document.getElementById("afterImg").src = jobs[current].after;
+}
+
+function next(){
+current++;
+if(current >= jobs.length){current = 0;}
+show();
+}
+
+function prev(){
+current--;
+if(current < 0){current = jobs.length-1;}
+show();
+}
+
+</script>
+
+</body>
+</html>
