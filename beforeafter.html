@@ -80,6 +80,23 @@ button:hover{
 background:#3d3d3d;
 }
 
+/* Home button */
+
+.home-btn{
+display:inline-block;
+background:#f48b47;
+color:white;
+padding:14px 28px;
+font-size:20px;
+border-radius:15px;
+text-decoration:none;
+margin-top:20px;
+}
+
+.home-btn:hover{
+background:#e27836;
+}
+
 /* Mobile fix */
 
 @media (max-width:700px){
@@ -123,10 +140,14 @@ width:95%;
 <button onclick="next()">Next</button>
 </div>
 
+<br>
+
+<a href="index.html" class="home-btn">Back to Home</a>
+
 <script>
 
 let jobs = [
-{before:"frown.jpg", after:"smile.jpg"},
+{before:"before1.jpg", after:"after1.jpg"},
 {before:"before2.jpg", after:"after2.jpg"},
 {before:"before3.jpg", after:"after3.jpg"}
 ];
